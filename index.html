@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Tra 1 trong các từ dưới đây: </p>
+<ul>
+    <li>Multiplication</li>
+    <li>Operation</li>
+    <li>Output</li>
+    <li>Application</li>
+    <li>Calculation</li>
+</ul>
+<input type="text" id="text" oninput="search();">
+<p id="vietnamese"></p>
+</body>
+<script>
+    let english = ["Multiplication","Operation","Output","Application","Calculation"];
+    let vietnamese = ["Phép nhân","Thao tác","đưa ra","Ứng dụng","Tính toán"];
+    function search() {
+        let eng = document.getElementById('text');
+        let index = -1;
+        let data = document.getElementById('vietnamese');
+        for (let i = 0; i<english.length;i++){
+            if(eng.value === english[i]){
+                index = i;
+            }
+        }
+        if(index!== -1){
+            data.innerHTML = vietnamese[index];
+        }else {
+            data.innerHTML = "Từ vựng nằm ngoài từ điển"
+        }
+
+    }
+</script>
+</html>
